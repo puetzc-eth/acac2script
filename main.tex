@@ -1,0 +1,85 @@
+% !TEX TS-program = pdflatex
+%=============================================================
+%  Allgemeine Chemie II (Anorganische Chemie)
+%  ETH Zürich — Vorlesungsskript (LaTeX-Grundgerüst)
+%=============================================================
+\documentclass[11pt,a4paper,oneside]{scrbook}
+
+%------------------ Pakete ------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{microtype}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{braket}
+\usepackage{siunitx}
+\sisetup{locale=DE}
+\usepackage[version=4]{mhchem} % \ce{}
+\usepackage{chemfig}           % optionale Strukturformeln
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{physics}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage[most]{tcolorbox}
+
+%------------------ Layout ------------------
+\KOMAoptions{headings=small}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\linespread{1.1}
+\hypersetup{
+  pdftitle={Allgemeine Chemie II (Anorganische Chemie) — ETH Zürich},
+  pdfauthor={},
+  pdfsubject={Vorlesungsskript},
+  pdfkeywords={Anorganische Chemie, Hauptgruppenchemie, Symmetrie, LCAO, Kristallgitter}
+}
+
+%------------------ eigene Makros ------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\diff}{\,\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\term}[1]{\textbf{#1}}
+\newcommand{\ER}{\mathcal{E}_\mathrm{R}} % Reaktionsenergie
+\DeclareSIUnit\eV{eV}
+
+% Lernziele-Box und Merksatz
+\newtcolorbox{lernziele}{colback=gray!5!white,colframe=gray!50!black,breakable,title=Lernziele}
+\newtcolorbox{merksatz}{colback=blue!3!white,colframe=blue!50!black,breakable,title=Merksatz}
+\newtcolorbox{beispiel}{colback=green!3!white,colframe=green!50!black,breakable,title=Beispiel}
+
+%------------------ Titel ------------------
+\title{Allgemeine Chemie II (Anorganische Chemie)\\\large ETH Zürich — Vorlesungsskript}
+\author{\textit{Arbeitsversion}}
+\date{\today}
+
+%=============================================================
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+
+\chapter*{Vorwort}
+Dieses Skript ist als begleitendes Material zur Vorlesung \emph{Allgemeine Chemie II (Anorganische Chemie)} an der ETH Zürich gedacht. Es strukturiert den Stoff in vier große Kapitel: (1) Einführung und Grundkonzepte, (2) Hauptgruppenchemie, (3) Symmetrie und LCAO, (4) Kristallgitter. Jedes Kapitel beginnt mit Lernzielen, gefolgt von kompakten Erklärungen, Beispielen und Übungsaufgaben.
+
+%=============================================================
+\mainmatter
+
+%-------------------------------------------------------------
+\chapter{Einführung und Grundkonzepte}
+\input{src/intro}
+\chapter{Hauptgruppenchemie}
+\input{src/maingroupchem}
+\chapter{Symmetrie und LCAO}
+\input{src/symmetry}
+\chapter{Kristallgitter}
+\input{src/lattice}
+
+\end{document}
